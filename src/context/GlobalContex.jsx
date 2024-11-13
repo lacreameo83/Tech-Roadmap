@@ -17,6 +17,7 @@ const [selectedLabel, setSelectedLabel] = useState("");
 const [newresharch,setnewreshach]=useState("")
 const [newresharchResponse, setnewreshachResponse] = useState([]);
 const [islabelempty,setIsLableEmpty]=useState(false)
+const [questionOutput, setQuestion] = useState([]);
 const learning = `Generate detailed learning paths for a career ${options} specified by the user. Provide specific steps and explanations to cover each area required to succeed, structured as valid JSON without any additional text or formatting. The structure should look like this:
 
 [{
@@ -33,6 +34,35 @@ const learning = `Generate detailed learning paths for a career ${options} speci
 
 Only return valid JSON without backticks, additional text, or formatting.`;
 
+const promptOutPut = `Generate  10 level questions for this topic ${selectedLabel}. Provide multiple-choice answer options for each question and clearly mark the correct answer. Return the response as an array of JSON objects with the following format for each question:
+
+[
+  {
+    "question": "Your question here",
+    "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+    "answer": "Correct answer here"
+  },
+  {
+    "question": "Your question here",
+    "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+    "answer": "Correct answer here"
+  },
+  ...
+]
+
+Only return valid JSON, without any additional text or formatting.`;
+
+const handleGenerateQuestion = async () => {
+  const response = await run(promptOutPut);
+
+  // let newResponse = response.replaceAll(/`/g, "");
+  // const newResponse2 = newResponse.replaceAll("json", "");
+
+  const FormatedResponse = JSON.parse(response);
+
+  setQuestion(FormatedResponse);
+  console.log(typeof FormatedResponse);
+};
 
 useEffect(() => {
   // Log newresharchResponse whenever it changes
@@ -90,34 +120,7 @@ useEffect(() => {
 
            try {
              const callMoreResearchOutput = await run(newResearch);
-            //  const sanitizedOutput = sanitizeResponse(callMoreResearchOutput);
-            //  setnewreshachResponse((prev) => [...prev, sanitizedOutput]);
-            //  console.log("Research Output:", sanitizedOutput);
-
-             
-             
-           
-
-          // let responseArray = callMoreResearchOutput.split("**");
-          
-          // let responseArray = callMoreResearchOutput.split("**");
-
-          // let newResponse = "";
-
-          // // Loop through the array and apply specific styles to headings and subheadings
-          // for (let i = 0; i < responseArray.length; i++) {
-          //   if (i % 2 === 1) {
-          //     // Odd index = Bold and Blue (Heading)
-          //     newResponse += `<h2 style="font-weight: bold; color: blue;background-color: pink;">${responseArray[i]}</h2>`;
-          //   } else if (i % 2 === 0 && i !== 0) {
-          //     // Even index but not the first one = Subheading (Green color)
-          //     newResponse += `<h3 style="color: green;">${responseArray[i]}</h3>`;
-          //   } else {
-          //     // Normal text (plain)
-          //     newResponse += `<p>${responseArray[i]}</p>`;
-          //   }
-          // }
-
+       
           const newResponse = sanitizeResponse(callMoreResearchOutput);
 
 
@@ -131,13 +134,13 @@ useEffect(() => {
          }
        };
 
-       // Optional: Automatically call `callMoreResearch` when `selectedLabel` changes
+      
        useEffect(() => {
          if (selectedLabel) callMoreResearch();
        }, [selectedLabel]);
 
  
-// callMoreResearch()
+
 
 
 
@@ -155,6 +158,8 @@ return (
       callMoreResearch,
       newresharchResponse,
       setIsLableEmpty,
+      handleGenerateQuestion,
+      questionOutput,
     }}
   >
     {children}

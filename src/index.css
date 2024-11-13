@@ -25,7 +25,9 @@ body {
 }
 
 
-
+.removescrollbar::-webkit-scrollbar {
+  display: none;
+}
 
 /* Blurred balls as moving background */
 .blurred-ball {

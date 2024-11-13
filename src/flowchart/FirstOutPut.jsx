@@ -7,7 +7,7 @@ function FirstOutPut({ data }) {
 
   return (
     <div
-      className="w-[20vw] text-[#10182c] h-[14vh] flex items-center justify-center "
+      className="w-[30vw]  sm:w-[20vw] text-[#10182c] h-[14vh] flex items-center justify-center "
       style={{
         backgroundColor: "#f0d318",
         borderRadius: "8px",
