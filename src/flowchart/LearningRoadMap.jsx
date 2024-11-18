@@ -259,8 +259,7 @@ const handleQUESTION =()=>{
 }
 
 
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
 
   return (
     <div>
@@ -273,10 +272,10 @@ const handleQUESTION =()=>{
         </div>
         <div className="h-[200vh] bg-[#fffefe] overflow-y-scroll">
           <ReactFlow
-            nodes={nodes}
-            edges={edges}
-            onNodesChange={onNodesChange}
-            onEdgesChange={onEdgesChange}
+            nodes={initialNodes}
+            edges={initialEdges}
+            // onNodesChange={onNodesChange}
+            // onEdgesChange={onEdgesChange}
             nodeTypes={nodeTypes}
             panOnScroll={false}
             zoomOnScroll={false} // Prevents zooming with scroll
