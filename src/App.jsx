@@ -5,7 +5,7 @@ import Input from './components/Input'
 // import FlowChart from './flowchart/FlowChart'
 import Home from './components/Home'
 import LearningRoadMap from './flowchart/LearningRoadMap'
-
+import Quiz from './flowchart/Quiz'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/flowchartDisplay",
     element: <LearningRoadMap />,
+  },
+  {
+    path: "/quiz",
+    element: <Quiz />,
   },
 ]);
 

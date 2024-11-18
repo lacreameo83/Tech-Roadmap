@@ -18,6 +18,9 @@ const [newresharch,setnewreshach]=useState("")
 const [newresharchResponse, setnewreshachResponse] = useState([]);
 const [islabelempty,setIsLableEmpty]=useState(false)
 const [questionOutput, setQuestion] = useState([]);
+const [questionModal, setQuestionModal] = useState(false);
+
+
 const learning = `Generate detailed learning paths for a career ${options} specified by the user. Provide specific steps and explanations to cover each area required to succeed, structured as valid JSON without any additional text or formatting. The structure should look like this:
 
 [{
@@ -55,10 +58,12 @@ Only return valid JSON, without any additional text or formatting.`;
 const handleGenerateQuestion = async () => {
   const response = await run(promptOutPut);
 
-  // let newResponse = response.replaceAll(/`/g, "");
-  // const newResponse2 = newResponse.replaceAll("json", "");
+  let newResponse = response.replaceAll(/```/g, "");
+  const newResponse2 = newResponse.replaceAll("json", "");
 
-  const FormatedResponse = JSON.parse(response);
+  const FormatedResponse = JSON.parse(newResponse2);
+//  const FormatedResponseoutput = FormatedResponse.replace(/```/g, "").replace(/json/g, "").trim(); 
+    
 
   setQuestion(FormatedResponse);
   console.log(typeof FormatedResponse);
@@ -160,6 +165,8 @@ return (
       setIsLableEmpty,
       handleGenerateQuestion,
       questionOutput,
+      questionModal,
+      setQuestionModal,
     }}
   >
     {children}
