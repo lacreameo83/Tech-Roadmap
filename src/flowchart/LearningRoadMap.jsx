@@ -111,7 +111,7 @@ const getXPositionSchool = () => {
           </div>
         ),
       },
-      position: { x: 600, y: -200 },
+      position: { x: getXPosition(), y: -200 },
     },
     {
       id: `${el.id}`,
@@ -191,7 +191,7 @@ const getXPositionSchool = () => {
           </div>
         ),
       },
-      position: { x: 900, y: -200 },
+      position: { x: getXPositionSchool(), y: -200 },
     },
   ]);
 
