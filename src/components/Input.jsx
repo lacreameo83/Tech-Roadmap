@@ -41,18 +41,18 @@ function Input() {
           <p className="text-[20px] text-center sm:text-[30px] font-[600]">
             What Career in tech do you want to Search?
           </p>
-          <div className="flex p-4">
-            <div className="w-[18rem] sm:w-[30rem] h-[4rem] relative">
+          <div className=" flex p-4">
+            <div className="w-[12rem] sm:w-[20rem] h-[4rem] relative">
               <input
                 id="search"
                 type="text"
                 autoComplete="off"
                 value={options}
                 onChange={handleInput}
-                className="absolute forminput top-0 left-0 w-[100%] h-[100%] rounded-s-lg text-white border border-black outline-none bg-black p-[10px]"
+                className="absolute forminput top-0 left-0 w-[100%] h-[100%]  rounded-s-lg text-white border border-black outline-none bg-black p-[10px]"
               />
               <label
-                className="text-blue-500 w-[100px] text-[20px] text-center absolute left-[2rem] top-[25%] cursor-text transition"
+                className="text-blue-500 w-[100px] sm:text-[20px] text-center absolute left-[2rem] top-[25%] cursor-text transition"
                 htmlFor="search"
               >
                 search
@@ -60,7 +60,7 @@ function Input() {
             </div>
            
               <button
-                className="bg-blue-400 h-[4rem] rounded-r-lg sm:text-[20px] w-[110px] sm:w-[150px] flex items-center justify-center"
+                className="bg-blue-400 h-[4rem]   w-[8em]  items-center mx-auto text-[12px] rounded-r-lg sm:text-[20px]  sm:w-[120px] flex  justify-center"
                 onClick={handleSend}
                 disabled={isLoading}
               >
