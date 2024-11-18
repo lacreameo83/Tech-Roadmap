@@ -180,7 +180,7 @@ const handleNextQuestion = () => {
           </div>
         ),
       },
-      position: { x: 900, y: 5 + index * 200 },
+      position: { x: 1000, y: 5 + index * 200 },
     },
     {
       id: `School2-${el.id}`,
@@ -192,7 +192,7 @@ const handleNextQuestion = () => {
           </div>
         ),
       },
-      position: { x: 900, y: 100 + index * 200 },
+      position: { x: 1000, y: 100 + index * 200 },
     },
     {
       id: `Resourse1-${20}`,
