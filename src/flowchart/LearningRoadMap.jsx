@@ -267,29 +267,22 @@ const getXPositionSchool = () => {
         </div>
         <div className=" h-[200vh] w-[100vw] bg-[#0f172a] py-10">
           <ReactFlow
-            // style={{
-            //   height: "300vh",
-            //   overflow: "auto",
-            //   width: "100vw",
-            //   backgroundColor: "pink",
-            // }}
+            
             preventScrolling={false}
             className="react-flow"
             nodes={initialNodes}
             edges={initialEdges}
-            // onNodesChange={onNodesChange}
-            // onEdgesChange={onEdgesChange}
+           
             nodeTypes={nodeTypes}
-            // panOnScroll={scrollY}
-            // panOnScroll={["shift"]}
-            // onConnect={onConnent}
-            // panOnDrag={true} // Keeps the arrow cursor
+            panOnScroll={false}
+      
+            panOnDrag={false} 
             selectNodesOnDrag={false}
-            zoomOnScroll={false} // Prevents zooming with scroll
-            zoomOnPinch={false} // Prevents zooming with pinch gestures
+            zoomOnScroll={false} 
+            zoomOnPinch={false} 
             fitView
           >
-            {/* <Background /> */}
+            <Background />
           </ReactFlow>
         </div>
         <div className=" flex h-[20vh] sm:h-[40vh]  w-[100vw] items-center bg-[#758dc4] justify-center">
