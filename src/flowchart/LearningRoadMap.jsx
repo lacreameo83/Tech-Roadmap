@@ -246,31 +246,37 @@ const getXPositionSchool = () => {
 // }
 
 
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  // const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  // const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   return (
     <div>
-      <div className="h-screen w-screen mb-24 bg-[#fffefe]   ">
+      <div className="h-screen  w-screen mb-24 bg-[#fffefe]   ">
         <div className="h-[10vh]  px-10 sticky top-0 bg-[#0f172a] z-20 text-yellow-50 flex items-center justify-between  ">
           <p>Tech RoadMap</p>
           <a href="https://tech-quiz-gxmx.vercel.app/?vercelToolbarCode=1Iqfb5DbSiEhhQs">
             Take A Quiz
           </a>
         </div>
-        <div className="h-[200vh] w-[100vw] bg-[#0f172a] ">
+        <div className="h-[200vh] overflow-auto  w-[100vw] bg-[#0f172a] ">
           <ReactFlow
-            nodes={nodes}
-            edges={edges}
-            onNodesChange={onNodesChange}
-            onEdgesChange={onEdgesChange}
+            // style={{
+            //   height: "300vh",
+            //   overflow: "auto",
+            //   width: "100vw",
+            //   backgroundColor: "pink",
+            // }}
+            nodes={initialNodes}
+            edges={initialEdges}
+            // onNodesChange={onNodesChange}
+            // onEdgesChange={onEdgesChange}
             nodeTypes={nodeTypes}
             panOnScroll={false}
             zoomOnScroll={false} // Prevents zooming with scroll
             zoomOnPinch={false} // Prevents zooming with pinch gestures
             fitView
           >
-            <Background />
+            {/* <Background /> */}
           </ReactFlow>
         </div>
         <div className=" flex h-[20vh] sm:h-[40vh]  w-[100vw] items-center bg-[#758dc4] justify-center">
