@@ -10,19 +10,21 @@ body {
   font-family: Convergence,sans-serif;
 }
 
+/* Add smooth transitions */
 .transition {
- transition: top 200ms ease-in ,left 200ms ease-in fontsize 200ms ease-in;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in, color 200ms ease-in;
 }
 
+/* Apply styles to label when input is focused */
 .forminput:focus ~ .transition {
-  top:-25%;
-  font-size:20px;
-  width: 100px;
+  top: -25%;
+  font-size: 20px;
   left: 1.5rem;
-  border:none;
+  border: none;
   font-weight: bolder;
-  /* background-color: ; */
+  color: #1E90FF; /* Optional: Change text color on focus */
 }
+
 
 
 .removescrollbar::-webkit-scrollbar {

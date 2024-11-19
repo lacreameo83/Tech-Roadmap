@@ -2,10 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
 import ReactFlow, {
   Background,
-  Controls,
-  useEdgesState,
-  useNodesState,
-  // onConnect
+ 
 } from "reactflow";
 import "reactflow/dist/style.css";
 import { GlobalContext } from "../context/GlobalContex";
@@ -28,7 +25,7 @@ import { useNavigate } from "react-router-dom";
     displayschool: School,
     resourses: Resourses,
     topic: TopicSearched,
-    // Using the actual component for the node type
+   
   };
 
 function LearningRoadMap() {
@@ -47,7 +44,7 @@ function LearningRoadMap() {
 const [isModel,setIsModel]=useState(false)
 const [loading,setloading]=useState(false)
 
-// console.log(newresharchResponse);
+
 
 const navigate = useNavigate();
 
@@ -234,27 +231,12 @@ const getXPositionSchool = () => {
       target: `${el.id}`,
       // animated: true,
     },
-    {
-      // id: `Top-${el.id}`,
-      // source: `${el.id}`,
-      // target: `result-${10}`,
-      // animated: true,
-    },
-    // {
-    //   id: `result-${10}`,
-    //   source: `result-${10}`,
-    //   target: `${0}`,
-    //   // animated: true,
-    // },
+    
   ]);
 
-// const handleQUESTION =()=>{
-
-// }
 
 
-  // const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  // const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
 
   return (
     <div>
