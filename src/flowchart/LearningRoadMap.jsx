@@ -241,27 +241,24 @@ const getXPositionSchool = () => {
   return (
     <div>
       <div className="min-h-screen w-screen flex flex-col">
-        <div className="h-[10vh] sticky top-0 bg-[#0f172a] z-20 text-yellow-50 flex items-center justify-between px-10">
+        <div className="h-[10vh] sticky top-0 bg-[#0f172a]  z-20 text-yellow-50 flex items-center justify-between px-4 sm:px-10">
           <p>Tech RoadMap</p>
           <a href="https://tech-quiz-gxmx.vercel.app/?vercelToolbarCode=1Iqfb5DbSiEhhQs">
-           want to test your tech ability ? Take A Quiz
+            <span className="hidden sm:block">want to test your tech ability ?</span> Take A Quiz
           </a>
         </div>
-        <div className=" h-[200vh] w-[100vw] bg-[#0f172a] ">
+        <div className="h-[170vh]  sm:h-[200vh] w-[100vw] bg-[#0f172a] ">
           <ReactFlow
-            
             preventScrolling={false}
             className="react-flow"
             nodes={initialNodes}
             edges={initialEdges}
-           
             nodeTypes={nodeTypes}
             panOnScroll={false}
-      
-            panOnDrag={false} 
+            panOnDrag={false}
             selectNodesOnDrag={false}
-            zoomOnScroll={false} 
-            zoomOnPinch={false} 
+            zoomOnScroll={false}
+            zoomOnPinch={false}
             fitView
           >
             <Background />
