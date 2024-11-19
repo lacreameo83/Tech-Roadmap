@@ -3,11 +3,9 @@ import { GlobalContext } from "../context/GlobalContex";
 import { Handle, Position } from "reactflow";
 
 function FirstOutPut({ data }) {
- 
-
   return (
     <div
-      className="w-[30vw]  sm:w-[20vw] text-[#10182c] h-[14vh] flex items-center justify-center "
+      className="w-[110px] text-[10px]  sm:w-[20vw] text-[#10182c] h-[20vh] sm:h-[14vh] flex items-center justify-center "
       style={{
         backgroundColor: "#f0d318",
         borderRadius: "8px",

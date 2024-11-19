@@ -78,7 +78,25 @@ useEffect(() => {
 
 
 
+const getXPosition = () => {
+  if (window.innerWidth > 1200) {
+    return 500; // Position for larger screens
+  } else if (window.innerWidth > 768) {
+    return 800; // Position for medium screens
+  } else {
+    return 120; // Position for smaller screens
+  }
+};
 
+const getXPositionSchool = () => {
+  if (window.innerWidth > 1200) {
+    return 1000; // Position for larger screens
+  } else if (window.innerWidth > 768) {
+    return 1000; // Position for medium screens
+  } else {
+    return 250; // Position for smaller screens
+  }
+};
 
 // const Output = newresharchResponse[newresharchResponse.length - 1];
 
@@ -93,13 +111,13 @@ useEffect(() => {
           </div>
         ),
       },
-      position: { x: 600, y: -200 },
+      position: { x: getXPosition(), y: -200 },
     },
     {
       id: `${el.id}`,
       type: "firstOutPut",
       data: { text: el.Courses, onClick: () => handleNodeClick(el.Courses) },
-      position: { x: 600, y: 10 + index * 200 },
+      position: { x: getXPosition(), y: 10 + index * 200 },
     },
 
     {
@@ -112,7 +130,7 @@ useEffect(() => {
           </div>
         ),
       },
-      position: { x: 200, y: 8 + index * 200 },
+      position: { x: 1, y: 8 + index * 200 },
     },
     {
       id: `Learn2-${el.id}`,
@@ -124,7 +142,7 @@ useEffect(() => {
           </div>
         ),
       },
-      position: { x: 200, y: 70 + index * 200 },
+      position: { x: 1, y: 70 + index * 200 },
     },
     {
       id: `Learn3-${el.id}`,
@@ -136,7 +154,7 @@ useEffect(() => {
           </div>
         ),
       },
-      position: { x: 200, y: 132 + index * 200 },
+      position: { x: 1, y: 132 + index * 200 },
     },
 
     {
@@ -149,7 +167,7 @@ useEffect(() => {
           </div>
         ),
       },
-      position: { x: 900, y: 5 + index * 200 },
+      position: { x: getXPositionSchool(), y: 5 + index * 200 },
     },
     {
       id: `School2-${el.id}`,
@@ -161,7 +179,7 @@ useEffect(() => {
           </div>
         ),
       },
-      position: { x: 900, y: 100 + index * 200 },
+      position: { x: getXPositionSchool(), y: 100 + index * 200 },
     },
     {
       id: `Resourse1-${20}`,
@@ -173,7 +191,7 @@ useEffect(() => {
           </div>
         ),
       },
-      position: { x: 900, y: -200 },
+      position: { x: getXPositionSchool(), y: -200 },
     },
   ]);
 
@@ -228,58 +246,51 @@ useEffect(() => {
 // }
 
 
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  // const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  // const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   return (
     <div>
-      <div className="h-screen w-screen mb-24 bg-[#fffefe]   ">
-        <div className="h-[10vh] mb-6 px-10 sticky top-0 bg-[#0f172a] z-20 text-yellow-50 flex items-center justify-between  ">
+      <div className="h-screen  w-screen mb-24 bg-[#fffefe]   ">
+        <div className="h-[10vh]  px-10 sticky top-0 bg-[#0f172a] z-20 text-yellow-50 flex items-center justify-between  ">
           <p>Tech RoadMap</p>
           <a href="https://tech-quiz-gxmx.vercel.app/?vercelToolbarCode=1Iqfb5DbSiEhhQs">
             Take A Quiz
           </a>
         </div>
-        <div className="h-[200vh] bg-[#fffefe] overflow-y-scroll">
+        <div className="h-[200vh] overflow-auto  w-[100vw] bg-[#0f172a] ">
           <ReactFlow
-            nodes={nodes}
-            edges={edges}
-            onNodesChange={onNodesChange}
-            onEdgesChange={onEdgesChange}
+            // style={{
+            //   height: "300vh",
+            //   overflow: "auto",
+            //   width: "100vw",
+            //   backgroundColor: "pink",
+            // }}
+            nodes={initialNodes}
+            edges={initialEdges}
+            // onNodesChange={onNodesChange}
+            // onEdgesChange={onEdgesChange}
             nodeTypes={nodeTypes}
             panOnScroll={false}
             zoomOnScroll={false} // Prevents zooming with scroll
             zoomOnPinch={false} // Prevents zooming with pinch gestures
             fitView
           >
-            <Background />
+            {/* <Background /> */}
           </ReactFlow>
         </div>
-        <div className=" flex h-[50vh] items-center bg-[#f9fafb] justify-center">
-          <div className="h-[30vh] w-[50vw] ">
-            <h2 className="text-center text-[50px] font-[800]">
+        <div className=" flex h-[20vh] sm:h-[40vh]  w-[100vw] items-center bg-[#758dc4] justify-center">
+          <div className="h-[10vh] sm:h-[20vh] w-[100vw] ">
+            <h2 className="text-center text-[20px] sm:text-[50px] font-[800]">
               Join the Community
             </h2>
             <p className="text-center font-[300] ">
-              roadmap <span className="underline">is our 1st project</span> and
-              is visited by
+              roadmap <span className="underline">is our 2nd project</span>
             </p>
-            <p className="text-center">hundreds of thousands of people</p>
-            <div className="flex items-center my-8 justify-center gap-3">
-              <div className="text-center text-[40px] font-[800] border-r-2 pr-5">
-                +1M
-              </div>
-              <div className="text-center text-[40px] font-[800] border-r-2  pr-5">
-                28K
-              </div>
-              <div className="text-center text-[40px] font-[800] border-r-2  pr-5">
-                290K
-              </div>
-            </div>
           </div>
         </div>
         <div className=" bg-[#0f172a] flex justify-center items-center  h-[40vh] w-[100vw] text-yellow-50">
-          <div className="h-[20vh] w-[70vw] grid grid-cols-2 ">
+          <div className="sm:h-[20vh] px-2 sm:px-0 sm:w-[70vw] grid grid-cols-1 sm:grid-cols-2 ">
             <div>
               <h2>RoadMap tech Genarator</h2>
 
@@ -288,17 +299,19 @@ useEffect(() => {
               <p> path and grow in your career.</p>
             </div>
             <div>
-              <h2 className="text-end">TheNewStack</h2>
-              <p className="text-end">The top resource from Osonwa Precious</p>
-              <p className="text-end">frontEnd Developer</p>
-              <p className="text-end">development and deploment</p>
+              <h2 className="sm:text-end">TheNewStack</h2>
+              <p className="sm:text-end">
+                The top resource from Osonwa Precious
+              </p>
+              <p className="sm:text-end">frontEnd Developer</p>
+              <p className="sm:text-end">development and deploment</p>
             </div>
           </div>
         </div>
       </div>
 
       {isModel && (
-        <div className="h-[100vh] removescrollbar z-50 px-2 py-5  overflow-y-scroll w-[40vw] shadow-lg bg-white  fixed top-0 right-0">
+        <div className="h-[100vh] removescrollbar z-50 px-2 py-5  overflow-y-scroll w-[100vw] sm:w-[40vw] shadow-lg bg-white  fixed top-0 right-0">
           {!loading ? (
             <div>
               <div
@@ -336,7 +349,6 @@ useEffect(() => {
                 >
                   Take A Quiz
                 </p>
-               
               </div>
             </div>
           ) : (
