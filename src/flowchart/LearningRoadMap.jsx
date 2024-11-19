@@ -5,6 +5,7 @@ import ReactFlow, {
   Controls,
   useEdgesState,
   useNodesState,
+  // onConnect
 } from "reactflow";
 import "reactflow/dist/style.css";
 import { GlobalContext } from "../context/GlobalContex";
@@ -233,6 +234,12 @@ const getXPositionSchool = () => {
       target: `${el.id}`,
       // animated: true,
     },
+    {
+      // id: `Top-${el.id}`,
+      // source: `${el.id}`,
+      // target: `result-${10}`,
+      // animated: true,
+    },
     // {
     //   id: `result-${10}`,
     //   source: `result-${10}`,
@@ -251,14 +258,14 @@ const getXPositionSchool = () => {
 
   return (
     <div>
-      <div className="h-screen  w-screen mb-24 bg-[#fffefe]   ">
-        <div className="h-[10vh]  px-10 sticky top-0 bg-[#0f172a] z-20 text-yellow-50 flex items-center justify-between  ">
+      <div className="min-h-screen w-screen flex flex-col">
+        <div className="h-[10vh] sticky top-0 bg-[#0f172a] z-20 text-yellow-50 flex items-center justify-between px-10">
           <p>Tech RoadMap</p>
           <a href="https://tech-quiz-gxmx.vercel.app/?vercelToolbarCode=1Iqfb5DbSiEhhQs">
             Take A Quiz
           </a>
         </div>
-        <div className="h-[200vh] overflow-auto  w-[100vw] bg-[#0f172a] ">
+        <div className=" h-[200vh] w-[100vw] bg-[#0f172a] py-10">
           <ReactFlow
             // style={{
             //   height: "300vh",
@@ -266,12 +273,18 @@ const getXPositionSchool = () => {
             //   width: "100vw",
             //   backgroundColor: "pink",
             // }}
+            preventScrolling={false}
+            className="react-flow"
             nodes={initialNodes}
             edges={initialEdges}
             // onNodesChange={onNodesChange}
             // onEdgesChange={onEdgesChange}
             nodeTypes={nodeTypes}
-            panOnScroll={false}
+            // panOnScroll={scrollY}
+            // panOnScroll={["shift"]}
+            // onConnect={onConnent}
+            // panOnDrag={true} // Keeps the arrow cursor
+            selectNodesOnDrag={false}
             zoomOnScroll={false} // Prevents zooming with scroll
             zoomOnPinch={false} // Prevents zooming with pinch gestures
             fitView

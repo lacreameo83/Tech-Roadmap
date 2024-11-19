@@ -17,6 +17,7 @@ function FirstOutPut({ data }) {
     >
       <Handle type="source" position={Position.Right} />
       <Handle type="target" position={Position.Left} />
+      {/* <Handle type="source" position={Position.Top} /> */}
       <p className="text-center text-[15px] font-[600] ">{data.text}</p>
     </div>
   );

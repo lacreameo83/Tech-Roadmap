@@ -7,7 +7,7 @@ function TopicSearched({data}) {
   return (
     <div className="bg-[#758dc4] w-[30vw] text-[12px] flex items-center  justify-center text-white rounded-[8px] sm:w-[20vw]  h-[14vh] p-3">
       {data.text}
-      <Handle type="source" position={Position.Bottom} />
+      {/* <Handle type="target" position={Position.Bottom} /> */}
     </div>
   );
 }

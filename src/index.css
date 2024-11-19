@@ -75,6 +75,10 @@ body {
     transform: translate(-30px, 50px);
   }
 }
+.react-flow {
+  cursor: default !important; /* Forces the arrow cursor */
+}
+
 
 .gradient {
   /* position: absolute; */
