@@ -109,7 +109,7 @@ const getXPositionSchool = () => {
           </div>
         ),
       },
-      position: { x: getXPosition(), y: -200 },
+      position: { x: getXPosition(), y: -250 },
     },
     {
       id: `${el.id}`,
@@ -189,7 +189,7 @@ const getXPositionSchool = () => {
           </div>
         ),
       },
-      position: { x: getXPositionSchool(), y: -200 },
+      position: { x: getXPositionSchool(), y: -250 },
     },
   ]);
 
@@ -244,10 +244,10 @@ const getXPositionSchool = () => {
         <div className="h-[10vh] sticky top-0 bg-[#0f172a] z-20 text-yellow-50 flex items-center justify-between px-10">
           <p>Tech RoadMap</p>
           <a href="https://tech-quiz-gxmx.vercel.app/?vercelToolbarCode=1Iqfb5DbSiEhhQs">
-            Take A Quiz
+           want to test your tech ability ? Take A Quiz
           </a>
         </div>
-        <div className=" h-[200vh] w-[100vw] bg-[#0f172a] py-10">
+        <div className=" h-[200vh] w-[100vw] bg-[#0f172a] ">
           <ReactFlow
             
             preventScrolling={false}

@@ -41,7 +41,7 @@ function Input() {
       const interval = setInterval(() => {
         setLoadingText(loadingPhrases[counter % loadingPhrases.length]);
         setCounter((prevCounter) => prevCounter + 1); // Update counter for next phrase
-      }, 2000); // Update every 2 seconds
+      }, 8000); // Update every 2 seconds
 
       return () => clearInterval(interval); // Clean up interval on unmount or when loading stops
     }
