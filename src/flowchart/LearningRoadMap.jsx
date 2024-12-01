@@ -270,6 +270,7 @@ const getXPositionSchool = () => {
             edges={initialEdges}
             // onNodesChange={onNodesChange}
             // onEdgesChange={onEdgesChange}
+            preventScrolling={false}
             nodeTypes={nodeTypes}
             panOnScroll={false}
             zoomOnScroll={false} // Prevents zooming with scroll
