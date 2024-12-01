@@ -250,7 +250,7 @@ const getXPositionSchool = () => {
   // const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   return (
-    <div>
+    <div className="relative">
       <div className="h-screen  w-screen mb-24 bg-[#fffefe]   ">
         <div className="h-[10vh]  px-10 sticky top-0 bg-[#0f172a] z-20 text-yellow-50 flex items-center justify-between  ">
           <p>Tech RoadMap</p>
@@ -268,6 +268,7 @@ const getXPositionSchool = () => {
             // }}
             nodes={initialNodes}
             edges={initialEdges}
+            preventScrolling={false}
             // onNodesChange={onNodesChange}
             // onEdgesChange={onEdgesChange}
             nodeTypes={nodeTypes}

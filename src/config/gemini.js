@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = "AIzaSyAOh_sviu6xFpwYTP806_UVy3VQHIk-Vac";
+const GEMINI_API_KEY = "AIzaSyBGxIErlepJjcAOWeBfy8CdZ8OD9dZI0Ww";
 
 /*
  * Install the Generative AI SDK
