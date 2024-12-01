@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function Resourses({ data }) {
   return (
@@ -12,4 +12,4 @@ function Resourses({ data }) {
   );
 }
 
-export default Resourses
+export default Resourses;

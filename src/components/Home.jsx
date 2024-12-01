@@ -42,7 +42,7 @@ function Home() {
           <h2 className="text-4xl sm:text-6xl">Powered by AI.</h2>
         </div>
         <div className="font-[400] text-[rgb(104, 105, 209)] text-[20px] ">
-          <p className='text-center'> Search  Tech Skill You Want To Learn About. </p>
+          <p> Search  Tech Skill You Want To Learn About. </p>
           <p className="text-center">Tech Road Map. </p>
         </div>
       </motion.div>

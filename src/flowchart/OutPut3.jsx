@@ -1,5 +1,5 @@
-import React from 'react'
-import { Handle, Position } from 'reactflow';
+import React from "react";
+import { Handle, Position } from "reactflow";
 
 function OutPut3({ data }) {
   return (
@@ -10,4 +10,4 @@ function OutPut3({ data }) {
   );
 }
 
-export default OutPut3
+export default OutPut3;

@@ -1,57 +1,53 @@
-import React, { useContext, useState } from 'react'
-import { GlobalContext } from '../context/GlobalContex';
+import React, { useContext, useState } from "react";
+import { GlobalContext } from "../context/GlobalContex";
 import { CircularProgress } from "@mui/material";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 function Quiz() {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(false);
+  const [dispalyResponse, setDisplayResponse] = useState("");
+  const [precious, setprecious] = useState("");
+  const [osonwa, setosonwa] = useState("");
+  const {
+    options,
+    handleGenerateQuestion,
+    questionOutput,
+    newresharch,
+    selectedLabel,
+    questionModal,
+    setQuestionModal,
+  } = useContext(GlobalContext);
 
-const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-const [selectedOption, setSelectedOption] = useState(false);
-const [dispalyResponse, setDisplayResponse] = useState("");
-const [precious, setprecious] = useState("");
-const [osonwa, setosonwa] = useState("");
-const {
-  options,
-  handleGenerateQuestion,
-  questionOutput,
-  newresharch,
-  selectedLabel,
-  questionModal,
-  setQuestionModal,
-} = useContext(GlobalContext);
+  const navigate = useNavigate();
 
-const navigate =useNavigate()
+  const handleNextQuestion = () => {
+    if (selectedOption === currentQuestion.answer) {
+      setDisplayResponse("Correct answer!");
+      setTimeout(() => {
+        if (currentQuestionIndex < questionOutput.length - 1) {
+          // Increment question index for the next question
+          setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+          setDisplayResponse(""); // Clear feedback message
+        } else {
+          // Final question completed
+          setprecious("Congratulations! You've completed the test.");
+          setosonwa("Consider moving to the next level!");
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
+        }
+        setSelectedOption(null); // Reset selected option
+      }, 1000);
+    } else {
+      setDisplayResponse("Incorrect answer. Try again.");
+    }
+  };
 
-const handleNextQuestion = () => {
-  if (selectedOption === currentQuestion.answer) {
-    setDisplayResponse("Correct answer!");
-    setTimeout(() => {
-      if (currentQuestionIndex < questionOutput.length - 1) {
-        // Increment question index for the next question
-        setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-        setDisplayResponse(""); // Clear feedback message
-      } else {
-        // Final question completed
-        setprecious("Congratulations! You've completed the test.");
-        setosonwa("Consider moving to the next level!");
-        setTimeout(() => {
-          navigate("/");
-        }, 2000);
-      }
-      setSelectedOption(null); // Reset selected option
-    }, 1000);
-  } else {
-    setDisplayResponse("Incorrect answer. Try again.");
-  }
+  const currentQuestion = questionOutput[currentQuestionIndex];
 
-  
-};
-
- const currentQuestion = questionOutput[currentQuestionIndex];
-
- const handleOptionChange = (option) => {
-   setSelectedOption(option);
- };
- 
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+  };
 
   return (
     <div>
@@ -132,4 +128,4 @@ const handleNextQuestion = () => {
   );
 }
 
-export default Quiz
+export default Quiz;
