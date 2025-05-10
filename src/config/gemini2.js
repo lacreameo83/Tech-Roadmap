@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = "AIzaSyA3GDM0UOuub_1YcdkFzef-sDVoTorLG-s";
+const GEMINI_API_KEY =  import.meta.env.VITE_GEMINI_API_KEY;
 
 /*
  * Install the Generative AI SDK
